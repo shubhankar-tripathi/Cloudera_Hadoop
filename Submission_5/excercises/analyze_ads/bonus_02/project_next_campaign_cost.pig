@@ -1,0 +1,20 @@
+data = LOAD '/dualcore/ad_data[1-2]/part*'
+
+	AS (campaign_id:chararray,
+            date:chararray, time:chararray,
+            keyword:chararray, display_site:chararray,
+            placement:chararray, was_clicked:int, cpc:int);
+
+-- Include only records where the ad was clicked
+clicked = FILTER data BY was_clicked IS NOT NULL;
+
+-- A: Group everything so we can call the aggregate function
+grouped = GROUP clicked ALL;
+
+-- B: Count the records 
+total = FOREACH grouped GENERATE MAX(clicked.cpc)*50000;
+
+
+-- C: Display the result to the screen
+DUMP total;
+

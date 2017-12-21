@@ -1,0 +1,17 @@
+Error before Pig is launched
+----------------------------
+ERROR 2997: Encountered IOException. File –x does not exist
+
+java.io.FileNotFoundException: File –x does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileStatus(RawLocalFileSystem.java:468)
+	at org.apache.hadoop.fs.FilterFileSystem.getFileStatus(FilterFileSystem.java:375)
+	at org.apache.pig.impl.io.FileLocalizer.fetchFilesInternal(FileLocalizer.java:791)
+	at org.apache.pig.impl.io.FileLocalizer.fetchFile(FileLocalizer.java:735)
+	at org.apache.pig.Main.run(Main.java:546)
+	at org.apache.pig.Main.main(Main.java:157)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:208)
+================================================================================
